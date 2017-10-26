@@ -36,10 +36,10 @@ echo -n "Do you have a you have a hosts file ready now? (y/n): "
 
 read choice
 if [[ ${choice:0:1} =~ [yY] ]]; then
-	echo -n "Filename: "
-	read filename
-
-	./add_host_keys.sh "$filename" 
+    echo -n "Filename: "
+    read filename
+    
+    ./add_host_keys.sh "$filename" 
 fi 
 
 echo "sunlab script setup finished!"
