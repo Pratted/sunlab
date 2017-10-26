@@ -29,6 +29,19 @@ fi" > ~/bin/sunlab
 
 chmod 755 ~/bin/sunlab
 
-echo "sunlab script has been created!"
+echo "You can add host keys now by providing a file containing the hosts."
+echo "You do not need to do this now. You can do it later by executing"
+echo "$ ./add_host_keys.sh <host file>"
+echo -n "Do you have a you have a hosts file ready now? (y/n): "
+
+read choice
+if [[ ${choice:0:1} =~ [yY] ]]; then
+	echo -n "Filename: "
+	read filename
+
+	./add_host_keys.sh "$filename" 
+fi 
+
+echo "sunlab script setup finished!"
 echo "Usage: $ sunlab <server>"
-echo "Example: sunlab dijkstra"
+echo -e "Example: sunlab dijkstra\n"
